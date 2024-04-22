@@ -16,7 +16,7 @@ PASSWORD="Madhur007@"
 get_cpu_usage() {
     # Use top to get the current CPU usage and filter the line with "Cpu(s)"
     # Calculate the sum of all CPU usages (user, system, iowait, etc.)
-    top -b -n2 -d 0.5 | grep "Cpu(s)" | tail -1 | awk '{print $2 + $4 + $6 + $10 + $11 + $12}'  # Add other CPU usages if needed
+    top -b -n2 -d 0.5 | grep "Cpu(s)" | tail -1 | awk '{print $2 + $4 + $6 + $10 + $11 + $12}'
 }
 
 # Function to send an email notification
@@ -40,6 +40,6 @@ while true; do
     fi
 
     # Sleep for 5 minutes before checking again
-    sleep 10
+    sleep 300
 done
 
